@@ -3,6 +3,7 @@ import cors from "cors";
 import getRoutes from "./routers/getRoutes";
 import postRoutes from "./routers/PostRoutes"
 import delRoutes from "./routers/delRoutes"
+import employeeRoute from "./routers/employeeRoute"
 // Create a new express application instance
 const app = express();
 
@@ -16,6 +17,7 @@ app.get("/", (req: Request, res: Response) => {
 app.use("/bogsh", getRoutes);
 app.use("/bogshed", postRoutes);
 app.use("/delbogsh", delRoutes);
+app.use("/employee", employeeRoute)
 // Start the Express server
 app.listen(port, () => {
   console.log(`The server is running at http://localhost:${port}`);
